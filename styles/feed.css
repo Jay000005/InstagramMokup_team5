@@ -1,0 +1,170 @@
+/* ==============================================
+   피드 페이지 스타일
+   ============================================== */
+
+/* ---- 스토리 바 ---- */
+.stories {
+  display: flex;
+  gap: var(--spacing-lg);
+  overflow-x: auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: var(--border);
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.story__username {
+  font-size: var(--font-size-xs);
+  max-width: 64px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ---- 게시물 카드 ---- */
+.post {
+  border-bottom: var(--border);
+}
+
+.post__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.post__user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.post__user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post__username {
+  font-weight: 600;
+  font-size: var(--font-size-md);
+}
+
+.post__location {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-dark);
+}
+
+.post__more {
+  padding: var(--spacing-sm);
+}
+
+.post__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.post__image {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover → 이미지 비율을 유지하면서 영역을 꽉 채움.
+     넘치는 부분은 잘림. 인스타그램처럼 다양한 비율의 사진을
+     정사각형 영역에 깔끔하게 표시할 때 필수. */
+  object-fit: cover;
+}
+
+.post__heart-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.post__heart-overlay--active {
+  animation: heartFade 1s ease forwards;
+}
+
+.post__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.post__actions-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.post__action-btn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+.post__action-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.post__action-btn--liked svg {
+  fill: var(--color-like);
+  stroke: var(--color-like);
+}
+
+.post__action-btn--bookmarked svg {
+  fill: var(--color-black);
+}
+
+.post__likes {
+  font-weight: 600;
+  padding: 0 var(--spacing-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.post__caption {
+  padding: 0 var(--spacing-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.post__caption-username {
+  font-weight: 600;
+  margin-right: var(--spacing-xs);
+}
+
+.post__comments-link {
+  display: block;
+  padding: 0 var(--spacing-lg);
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-xs);
+}
+
+.post__comment {
+  padding: 0 var(--spacing-lg);
+  margin-bottom: 2px;
+}
+
+.post__comment-username {
+  font-weight: 600;
+  margin-right: var(--spacing-xs);
+}
+
+.post__timestamp {
+  padding: 0 var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+  text-transform: uppercase;
+}

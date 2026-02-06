@@ -183,7 +183,28 @@
 
 
 @media (min-width: 1024px) {
-    .side-menu {
-        display: flex;
-    }
+  .content-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .content {
+    margin: 0;
+    flex: 0 0 614px;
+  }
+
+  .side-menu {
+    display: flex;
+
+    /* 여기부터가 핵심: 떠있는 배치 해제 */
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+
+    /* 오른쪽 칸 크기 */
+    flex: 0 0 290px; /* 너가 max-width 290 쓰고 있으니 290으로 맞춤 */
+    max-width: 290px;
+  }
 }
