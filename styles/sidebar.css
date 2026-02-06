@@ -52,14 +52,14 @@
   margin-top: auto;
 }
 
-/* ✅ 모바일/태블릿에서는 숨김 */
+/*  모바일/태블릿에서는 숨김 */
 @media (max-width: 768px) {
   .sidebar {
     display: none;
   }
 }
 
-/* ✅ PC에서만 고정 사이드바 */
+/*  PC에서만 고정 사이드바 */
 @media (min-width: 1024px) {
   .sidebar {
     display: flex; /* 혹시 다른 곳에서 숨겼으면 다시 보이게 */

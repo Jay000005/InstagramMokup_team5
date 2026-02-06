@@ -264,7 +264,7 @@
 }
 
 
-/* ✅ 모바일/태블릿에서 레이아웃 초기화 */
+/* 모바일/태블릿에서 레이아웃 초기화 */
 @media (max-width: 768px) {
   .main-container {
     padding-left: 0;     /* sidebar 자리 제거 */
