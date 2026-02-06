@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>릴스</title>
+    <link rel="stylesheet" href="styles/reels.css">
+</head>
+<body>
+    <!-- 사이드바 메뉴 -->
+    <nav class="side-nav">
+    <div class="logo">Instagram</div>
+    <ul>
+        <li>홈</li>
+        <li>릴스</li>
+        <li>탐색 탭</li>
+        <li>프로필</li>
+    </ul>
+  </nav>
+
+  <!-- 메인 영상 콘텐츠  -->
+  <main class="content-area">
+      <div class="reels-container">
+          
+          <article class="reel-wrapper">
+              
+              <div class="reel-video-card">
+                  <video src="videos/sample.mp4" loop autoplay muted></video>
+                  <div class="reel-overlay">
+                      <div class="user-info">
+                          <img src="assets/images/avatar.png" class="pic">
+                          <span class="name">username</span>
+                          <button class="follow">팔로우</button>
+                      </div>
+                      <div class="desc">릴스 설명글...</div>
+                  </div>
+              </div>
+
+              <div class="reel-actions">
+                  <button class="action-btn">
+                    <img src="assets/icons/heart.svg" alt="좋아요"> 
+                    <span>4953</span>
+                  </button>
+                  <button class="action-btn">
+                    <img src="assets/icons/comment.svg" alt="댓글"> 
+                    <span>91</span>
+                  </button>
+                  <button class="action-btn">
+                    <img src="assets/icons/repost.svg" alt="리포스트"> 
+                    <span>91</span>
+                  </button>
+                  <button class="action-btn">
+                    <img src="assets/icons/share.svg" alt="공유하기"> 
+                  </button>
+                  <button class="action-btn">
+                    <img src="assets/icons/bookmark.svg" alt="저장"> 
+                  </button>
+                  <button class="action-btn">
+                    <img src="assets/icons/more.svg" alt="더보기"> 
+                  </button>
+              </div>
+
+          </article>
+
+      </div>
+
+      <!-- 스크롤 컨트롤 버튼 -->
+      <div class="reel-navigation">
+        <button id="btnPrev" class="nav-btn up">
+          <img src="assets/icons/arrow_up.svg" alt="arrow-up">
+        </button>
+        <button id="btnNext" class="nav-btn down">
+          <img src="assets/icons/arrow_down.svg" alt="arrow-down">
+        </button>
+      </div>
+  </main>
+
+</body>
+</html>
