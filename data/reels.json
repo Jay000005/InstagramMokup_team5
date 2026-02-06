@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "videoSrc": "https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4",
+    "userProfile": "assets/images/avatar.png",
+    "userName": "nature_lover",
+    "isFollowing": false,
+    "description": "노란 꽃이 피는 나무 아래서 힐링 중 🌼 #nature #healing",
+    "likes": "12.5k",
+    "comments": "128",
+    "reposts": "45"
+  },
+  {
+    "id": 2,
+    "videoSrc": "https://assets.mixkit.co/videos/preview/mixkit-staring-at-the-ocean-from-a-cliff-4013-large.mp4",
+    "userProfile": "assets/images/avatar.png",
+    "userName": "ocean_view",
+    "isFollowing": true,
+    "description": "절벽 위에서 바라보는 끝없는 바다 🌊 #ocean #travel",
+    "likes": "8,432",
+    "comments": "56",
+    "reposts": "12"
+  },
+  {
+    "id": 3,
+    "videoSrc": "https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-light-in-the-city-at-night-21251-large.mp4",
+    "userProfile": "assets/images/avatar.png",
+    "userName": "city_night",
+    "isFollowing": false,
+    "description": "화려한 네온사인 아래의 도시 밤거리 ✨ #nightview #city",
+    "likes": "3,900",
+    "comments": "21",
+    "reposts": "7"
+  }
+]
