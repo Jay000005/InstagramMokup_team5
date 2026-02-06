@@ -1,0 +1,87 @@
+/* ==============================================
+   탐색 페이지 스타일
+   ============================================== */
+
+/* ---- 검색바 ---- */
+.search-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-white);
+  border-bottom: var(--border);
+  z-index: 100;
+}
+
+.search-bar__wrapper {
+  position: relative;
+}
+
+.search-bar__input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 36px;
+  background-color: var(--color-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
+  outline: none;
+}
+
+.search-bar__input::placeholder {
+  color: var(--color-gray);
+}
+
+.search-bar__icon {
+  position: absolute;
+  left: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--color-gray);
+}
+
+.search-bar__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---- 탐색 메인 영역 ---- */
+.explore-main {
+  padding-top: 52px;
+  padding-bottom: var(--nav-height);
+}
+
+/* ---- 탐색 그리드 (3열 + 대형) ---- */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.explore-grid__item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.explore-grid__item--large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.explore-grid__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- 검색 결과 없음 ---- */
+.explore-no-results {
+  text-align: center;
+  color: var(--color-gray);
+  padding: var(--spacing-2xl);
+  font-size: var(--font-size-md);
+}

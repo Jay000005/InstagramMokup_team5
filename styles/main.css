@@ -1,8 +1,9 @@
 .main-container {
     background-color: var(--primary);
-    margin-top: 44px;
-    margin-bottom: 44px;
+    margin-top: 0;
+    margin-bottom: 0;
     display: flex;
+    padding-left: 244px;
 }
 
 .content-container {
@@ -263,42 +264,23 @@
 }
 
 
-@media (min-width: 620px) {
-    .content-container {
-        padding: 30px 0 24px
-    }
+/* ✅ 모바일/태블릿에서 레이아웃 초기화 */
+@media (max-width: 768px) {
+  .main-container {
+    padding-left: 0;     /* sidebar 자리 제거 */
+    background: #fff;    /* 필요하면 secondary 말고 흰색 */
+  }
 
-    .content {
-        gap: 24px;
-    }
+  .content-container {
+    padding: 0 16px;     /* 좌우 여백만 */
+  }
 
-    .stories {
-        border: 1px solid var(--border);
-        border-radius: 4px;
-    }
-
-    .stories::after {
-        content: none;
-    }
-
-    .posts {
-        gap: 24px;
-    }
-
-    .post {
-        border: 1px solid var(--border);
-        border-radius: 4px;
-    }
-
-    .post__footer {
-        padding: 4px 8px 12px;
-    }
-
-    .post__date-time {
-        margin-top: 6px;
-    }
-
+  .content {
+    margin: 0;
+    gap: 16px;
+  }
 }
+
 
 @media (min-width: 1024px) {
     .main-container {
@@ -308,4 +290,10 @@
     .content {
         margin: unset;
     }
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    padding-left: 244px;
+  }
 }
