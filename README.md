@@ -1,43 +1,33 @@
-# InstagramMokup_team5
-## 협업 규칙 
-기준 폴더는 29.instagram로 간다. PC 화면 레이아웃(헤더·메인·사이드)은 이미 거기 있으니까 그걸 그대로 쓴다.
+# Instagram Mockup Project
 
-페이지는 HTML 전환 방식으로 만든다.
+인스타그램 사이트 목업 만들기
 
-feed.html / explore.html / profile.html / reels.html 이렇게 페이지를 나눈다.
+## 🛠 협업 규칙
 
-각 페이지는 헤더랑 사이드 메뉴는 그대로 두고, 가운데 내용만 바꾼다.
+### 브랜치 전략
 
-instagram-mockup-main은 참고용이다.
+각 페이지별로 독립적인 브랜치를 생성하여 작업한 뒤, 검토 후 `main` 브랜치에 합칩니다.
 
-여기서:
-- 피드 구조
-- 탐색 그리드
-- 프로필 화면 구성
-- 데이터(json)나 JS 로직
+- **main**: 최종 배포 및 완성된 코드가 올라가는 브랜치
+- **feature/feed**: 피드 페이지 작업
+- **feature/explore**: 탐색 페이지 작업
+- **feature/reels**: 릴스 페이지 작업
+- **feature/profile**: 프로필 페이지 작업
+- **workflow**: `feature` 브랜치 → `PR` 생성 → 리뷰 및 승인 → `Merge`
 
-이런 것만 가져와서 29.instagram 구조 안에 맞게 끼워 넣는다.
+## 👥 역할 분담
+| 담당자 | 역할 | 작업 내용 |
+| --- | --- | --- |
+| **김다은** | **홈(피드) 페이지** |  |
+| **정윤서** | **탐색 페이지** |  |
+| **조아영** | **릴스 페이지 및 통합** |  |
+| **최희원** | **프로필 페이지** |  |
 
-파트 분담은 페이지 기준으로 한다.
+---
 
-- feed 담당 → feed.html + feed.css + feed.js
+## 📂 폴더 구조
 
-- explore 담당 → explore.html + explore.css + explore.js
-
-- profile 담당 → profile.html + profile.css + profile.js
-
-- reels 담당 → reels.html + reels.css + reels.js
-
-헤더, 사이드 메뉴, 공통 CSS는 통합 담당만 수정한다. 각자는 자기 페이지 파일만 PR 보낸다.
-
-요약하면
-
-PC 틀은 29.instagram 그대로 쓰고,
-모바일 mockup은 내용만 참고해서 가져오고,
-각자 한 페이지씩 맡아서 만든다.
-
-### 폴더 구조 
-```
+```text
 instagram-pc/
 ├─ index.html
 ├─ feed.html
@@ -52,7 +42,6 @@ instagram-pc/
 ├─ styles/
 │  ├─ general.css
 │  ├─ layout.css
-│  ├─ sidebar.css
 │  ├─ header.css
 │  ├─ side.css
 │  ├─ feed.css
@@ -79,4 +68,3 @@ instagram-pc/
    ├─ side-menu.html
    ├─ post-card.html
    └─ story-item.html
-```
