@@ -1,33 +1,33 @@
 [
   {
     "id": 1,
-    "videoSrc": "https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4",
+    "videoSrc": "assets/videos/pancakes.mp4",
     "userProfile": "assets/images/avatar.png",
-    "userName": "nature_lover",
+    "userName": "sweet_homecafe",
     "isFollowing": false,
-    "description": "노란 꽃이 피는 나무 아래서 힐링 중 🌼 #nature #healing",
-    "likes": "12.5k",
-    "comments": "128",
-    "reposts": "45"
+    "description": "폭신폭신한 팬케이크에 베리 올리기 스킬 🥞🍓 주말 아침엔 역시 홈카페죠! #pancakes #homecafe #brunch #daily",
+    "likes": "2,405",
+    "comments": "82",
+    "reposts": "15"
   },
   {
     "id": 2,
-    "videoSrc": "https://assets.mixkit.co/videos/preview/mixkit-staring-at-the-ocean-from-a-cliff-4013-large.mp4",
+    "videoSrc": "assets/videos/blue.mp4",
     "userProfile": "assets/images/avatar.png",
-    "userName": "ocean_view",
+    "userName": "wanderlust_log",
     "isFollowing": true,
-    "description": "절벽 위에서 바라보는 끝없는 바다 🌊 #ocean #travel",
-    "likes": "8,432",
-    "comments": "56",
-    "reposts": "12"
+    "description": "눈앞에 펼쳐진 끝없는 블루 💙 잠시 숨을 고르고 풍경을 감상해 보세요. #travel #oceanview #healing #풍경 #여행",
+    "likes": "9,821",
+    "comments": "246",
+    "reposts": "112"
   },
   {
     "id": 3,
-    "videoSrc": "https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-light-in-the-city-at-night-21251-large.mp4",
+    "videoSrc": "assets/videos/cake.mp4",
     "userProfile": "assets/images/avatar.png",
-    "userName": "city_night",
+    "userName": "daily_record",
     "isFollowing": false,
-    "description": "화려한 네온사인 아래의 도시 밤거리 ✨ #nightview #city",
+    "description": "작은 촛불 하나로 완성되는 따뜻한 저녁 🎂🕯️ 소중한 순간은 늘 가까이에 있어요. #케이크 #홈파티 #기록 #moment",
     "likes": "3,900",
     "comments": "21",
     "reposts": "7"

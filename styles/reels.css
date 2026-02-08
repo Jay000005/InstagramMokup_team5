@@ -9,36 +9,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #fff;
   color: #262626;
-  display: flex; /* 사이드바와 메인을 가로로 배치 */
+  /* display: flex;  */
   height: 100vh;
   overflow: hidden; /* 바디 전체 스크롤은 막음 */
-}
-
-/* 2. 사이드바 (대략적 틀) */
-.side-nav {
-  width: 245px;
-  height: 100%;
-  border-right: 1px solid #dbdbdb;
-  padding: 20px;
-  flex-shrink: 0;
-}
-
-.side-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 40px;
-  font-style: italic;
-}
-
-.side-nav ul {
-  list-style: none;
-}
-
-.side-nav li {
-  padding: 15px 10px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
 }
 
 /* 3. 메인 콘텐츠 영역 (스크롤 스냅 핵심) */

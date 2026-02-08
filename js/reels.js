@@ -24,25 +24,25 @@ async function loadReels() {
             </div>
 
             <div class="reel-actions">
-                <button class="action-btn">
+                <button class="action-btn" data-tooltip="좋아요">
                   <img src="assets/icons/heart.svg" alt="좋아요"> 
                   <span>${data.likes}</span>
                 </button>
-                <button class="action-btn">
+                <button class="action-btn" data-tooltip="댓글">
                   <img src="assets/icons/comment.svg" alt="댓글"> 
                   <span>${data.comments}</span>
                 </button>
-                <button class="action-btn">
+                <button class="action-btn" data-tooltip="리포스트">
                   <img src="assets/icons/repost.svg" alt="리포스트"> 
                   <span>${data.reposts}</span>
                 </button>
-                <button class="action-btn">
+                <button class="action-btn" data-tooltip="공유하기">
                   <img src="assets/icons/share.svg" alt="공유하기"> 
                 </button>
-                <button class="action-btn">
+                <button class="action-btn" data-tooltip="저장">
                   <img src="assets/icons/bookmark.svg" alt="저장"> 
                 </button>
-                <button class="action-btn">
+                <button class="action-btn" data-tooltip="더보기">
                   <img src="assets/icons/more.svg" alt="더보기"> 
                 </button>
             </div>

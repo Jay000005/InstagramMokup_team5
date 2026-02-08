@@ -5,36 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>릴스</title>
     <link rel="stylesheet" href="styles/reels.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
 </head>
 <body>
-    <!-- 사이드바 메뉴 -->
-    <nav class="side-nav">
-    <div class="logo">Instagram</div>
-    <ul>
-        <li>홈</li>
-        <li>릴스</li>
-        <li>탐색 탭</li>
-        <li>프로필</li>
-    </ul>
-  </nav>
+  
+  <!-- 사이드바 메뉴 -->
+  <aside id="sidebar"></aside>
 
   <!-- 메인 영상 콘텐츠  -->
   <main class="content-area">
-      <div class="reels-container">
+      <div class="reels-container" aria-label="릴스 영상">
         <!-- JS로 동적 렌더링 -->
       </div>
 
       <!-- 스크롤 컨트롤 버튼 -->
       <div class="reel-navigation">
-        <button id="btnPrev" class="nav-btn up">
+        <button id="btnPrev" class="nav-btn up" aria-label="이전 릴스">
           <img src="assets/icons/arrow_up.svg" alt="arrow-up">
         </button>
-        <button id="btnNext" class="nav-btn down">
+        <button id="btnNext" class="nav-btn down" aria-label="다음 릴스">
           <img src="assets/icons/arrow_down.svg" alt="arrow-down">
         </button>
       </div>
   </main>
 
+  <script src="js/common.js"></script>
   <script src="js/reels.js"></script>
+
 </body>
 </html>
