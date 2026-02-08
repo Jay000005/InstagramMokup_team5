@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore</title>
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/explore.css" />
+    <script src="explore.js" defer></script>
+</head>
+
+<body>
+    <div class="explore-layout" id="exploreLayout">
+        <button class="explore-nav-toggle" id="exploreNavToggle" aria-expanded="false" aria-controls="exploreNav">
+            탐색 탭
+        </button>
+        <div class="explore-nav-scrim" id="exploreNavScrim" aria-hidden="true"></div>
+        <aside class="explore-nav" id="exploreNav">
+            <div class="explore-nav__logo">Instagram</div>
+            <a class="explore-nav__item" href="index.html">
+                <img src="assets/icons/home.svg" alt="home" />
+                <span>홈</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/icons/search.svg" alt="search" />
+                <span>검색</span>
+            </a>
+            <a class="explore-nav__item explore-nav__item--active" href="explore.html">
+                <span class="explore-nav__dot">●</span>
+                <span>탐색 탭</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/icons/reels.svg" alt="reels" />
+                <span>릴스</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/icons/messenger.svg" alt="message" />
+                <span>메시지</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/icons/heart.svg" alt="notifications" />
+                <span>알림</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <span class="explore-nav__plus">+</span>
+                <span>만들기</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/images/avatar.png" alt="profile" class="explore-nav__avatar" />
+                <span>프로필</span>
+            </a>
+        </aside>
+
+        <main class="explore">
+            <section class="explore__grid" id="exploreGrid">
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-01.svg" alt="explore item" />
+                </a>
+                <a class="explore__item explore__item--tall" href="#">
+                    <img src="assets/images/explore-02.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-03.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-04.svg" alt="explore item" />
+                </a>
+                <a class="explore__item explore__item--wide" href="#">
+                    <img src="assets/images/explore-05.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-06.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-07.svg" alt="explore item" />
+                </a>
+                <a class="explore__item explore__item--tall" href="#">
+                    <img src="assets/images/explore-08.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-09.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-10.svg" alt="explore item" />
+                </a>
+                <a class="explore__item explore__item--wide" href="#">
+                    <img src="assets/images/explore-11.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-12.svg" alt="explore item" />
+                </a>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

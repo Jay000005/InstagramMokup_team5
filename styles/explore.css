@@ -1,0 +1,245 @@
+:root {
+    --explore-gap: 4px;
+    --explore-cols: 3;
+    --explore-radius: 6px;
+    --explore-overlay: rgba(0, 0, 0, 0.45);
+}
+
+.explore-layout {
+    max-width: 1200px;
+    margin: 28px auto 40px;
+    padding: 0 16px;
+    display: flex;
+    gap: 24px;
+    position: relative;
+}
+
+.explore {
+    flex: 1;
+    max-width: 900px;
+}
+
+.explore-nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--primary);
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.explore-nav-scrim {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 4;
+}
+
+.explore-nav {
+    width: 240px;
+    position: sticky;
+    top: 24px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 20px;
+    border-right: 1px solid #efefef;
+}
+
+.explore-nav__logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin: 4px 0 18px;
+}
+
+.explore-nav__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #111;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.explore-nav__item img {
+    width: 18px;
+    height: 18px;
+}
+
+.explore-nav__item:hover {
+    background: #f6f6f6;
+}
+
+.explore-nav__item--active {
+    font-weight: 700;
+    background: #f6f6f6;
+    border: 1px solid #f0f0f0;
+}
+
+.explore-nav__dot {
+    font-size: 10px;
+}
+
+.explore-nav__plus {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--text-dark);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.explore-nav__avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.explore__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--explore-cols), minmax(0, 1fr));
+    gap: var(--explore-gap);
+    grid-auto-rows: 1fr;
+}
+
+.explore__item {
+    position: relative;
+    display: block;
+    background: #111;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: var(--explore-radius);
+}
+
+.explore__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1);
+    transition: transform 220ms ease, filter 220ms ease;
+}
+
+.explore__item:hover img {
+    transform: scale(1.04);
+    filter: saturate(1.05);
+}
+
+.explore__overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--explore-overlay);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity 180ms ease;
+}
+
+.explore__item:hover .explore__overlay {
+    opacity: 1;
+}
+
+.explore__metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.explore__metric img {
+    width: 16px;
+    height: 16px;
+    filter: invert(1);
+}
+
+.explore__badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.explore__item--tall {
+    grid-row: span 2;
+}
+
+.explore__item--wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --explore-cols: 2;
+    }
+
+    .explore-layout {
+        margin-top: 16px;
+        flex-direction: column;
+    }
+
+    .explore-nav {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        height: 100vh;
+        width: 240px;
+        background: #ffffff;
+        border-right: 1px solid var(--border);
+        padding: 16px;
+        z-index: 5;
+        transition: left 200ms ease;
+    }
+
+    .explore-nav__logo {
+        width: auto;
+    }
+
+    .explore-nav-toggle {
+        display: inline-flex;
+        align-self: flex-start;
+        margin-bottom: 8px;
+    }
+
+    .explore-layout.explore-layout--nav-open .explore-nav {
+        left: 0;
+    }
+
+    .explore-layout.explore-layout--nav-open .explore-nav-scrim {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --explore-cols: 1;
+    }
+
+    .explore__overlay {
+        font-size: 13px;
+        gap: 12px;
+    }
+}
