@@ -1,0 +1,183 @@
+/* 기본 설정 및 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #262626;
+  /* display: flex;  */
+  height: 100vh;
+  overflow: hidden; /* 바디 전체 스크롤은 막음 */
+}
+
+/* 3. 메인 콘텐츠 영역 (스크롤 스냅 핵심) */
+.content-area {
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; /* 한 장씩 딱딱 걸리게 함 */
+  position: relative;
+  scrollbar-width: none; /* 파이어폭스 스크롤바 숨기기 */
+}
+
+.content-area::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리 스크롤바 숨기기 */
+}
+
+.reels-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 4. 개별 릴스 단위 */
+.reel-wrapper {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  width: 100%;
+  height: 100vh; 
+  scroll-snap-align: center; /* 스크롤 시 중앙에 딱 걸림 */
+  position: relative; /* 버튼 배치의 기준점이 됨 */
+}
+
+/* 영상 카드 */
+.reel-video-card {
+  position: relative;
+  height: 90vh; 
+  aspect-ratio: 9 / 16; /* 릴스 규격 유지 */
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+  z-index: 1;
+}
+
+.reel-video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 영상 위 텍스트 정보 (오버레이) */
+.reel-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7)); /* 텍스트 가독성 */
+  color: white;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.user-info .pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid #fff;
+}
+
+.user-info .name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-info .follow {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-left: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* 5. 오른쪽 액션 버튼들 */
+.reel-actions {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  /* 영상의 오른쪽 끝에서부터 배치 */
+  /* calc(50% + (영상너비의 절반) + 간격) */
+  left: calc(50% + (90vh * 9 / 16 / 2) + 15px);
+  bottom: 20px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+
+.action-btn img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 4px;
+}
+
+.action-btn span {
+  font-size: 12px;
+  color: #262626;
+}
+
+/* 6. 상하 네비게이션 화살표 */
+.reel-navigation {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #dbdbdb;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-btn:hover {
+  background-color: #fafafa;
+}
+
+.nav-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+/* 화면 너비가 768px 이하일 때 (모바일/태블릿) */
+@media (max-width: 768px) {
+  .reel-navigation {
+    display: none !important; /* 스크롤 버튼을 아예 제거 */
+  }
+}

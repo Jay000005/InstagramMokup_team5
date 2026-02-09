@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "videoSrc": "assets/videos/pancakes.mp4",
+    "userProfile": "assets/images/avatar.png",
+    "userName": "sweet_homecafe",
+    "isFollowing": false,
+    "description": "폭신폭신한 팬케이크에 베리 올리기 스킬 🥞🍓 주말 아침엔 역시 홈카페죠! #pancakes #homecafe #brunch #daily",
+    "likes": "2,405",
+    "comments": "82",
+    "reposts": "15"
+  },
+  {
+    "id": 2,
+    "videoSrc": "assets/videos/blue.mp4",
+    "userProfile": "assets/images/avatar.png",
+    "userName": "wanderlust_log",
+    "isFollowing": true,
+    "description": "눈앞에 펼쳐진 끝없는 블루 💙 잠시 숨을 고르고 풍경을 감상해 보세요. #travel #oceanview #healing #풍경 #여행",
+    "likes": "9,821",
+    "comments": "246",
+    "reposts": "112"
+  },
+  {
+    "id": 3,
+    "videoSrc": "assets/videos/cake.mp4",
+    "userProfile": "assets/images/avatar.png",
+    "userName": "daily_record",
+    "isFollowing": false,
+    "description": "작은 촛불 하나로 완성되는 따뜻한 저녁 🎂🕯️ 소중한 순간은 늘 가까이에 있어요. #케이크 #홈파티 #기록 #moment",
+    "likes": "3,900",
+    "comments": "21",
+    "reposts": "7"
+  }
+]
