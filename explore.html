@@ -1,76 +1,99 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instagram - 탐색</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/explore.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore</title>
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/explore.css" />
+    <script src="explore.js" defer></script>
 </head>
+
 <body>
-  <div class="container">
-    <!-- 검색바 (헤더 역할) -->
-    <header class="search-bar">
-      <div class="search-bar__wrapper">
-        <!-- 검색 아이콘 -->
-        <span class="search-bar__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </span>
-        <input
-          type="text"
-          class="search-bar__input"
-          id="searchInput"
-          placeholder="검색"
-          aria-label="탐색 검색"
-        >
-      </div>
-    </header>
+    <div class="explore-layout" id="exploreLayout">
+        <button class="explore-nav-toggle" id="exploreNavToggle" aria-expanded="false" aria-controls="exploreNav">
+            탐색 탭
+        </button>
+        <div class="explore-nav-scrim" id="exploreNavScrim" aria-hidden="true"></div>
+        <aside class="explore-nav" id="exploreNav">
+            <div class="explore-nav__logo">Instagram</div>
+            <a class="explore-nav__item" href="index.html">
+                <img src="assets/icons/home.svg" alt="home" />
+                <span>홈</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/icons/search.svg" alt="search" />
+                <span>검색</span>
+            </a>
+            <a class="explore-nav__item explore-nav__item--active" href="explore.html">
+                <span class="explore-nav__dot">●</span>
+                <span>탐색 탭</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/icons/reels.svg" alt="reels" />
+                <span>릴스</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/icons/messenger.svg" alt="message" />
+                <span>메시지</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/icons/heart.svg" alt="notifications" />
+                <span>알림</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <span class="explore-nav__plus">+</span>
+                <span>만들기</span>
+            </a>
+            <a class="explore-nav__item" href="#">
+                <img src="assets/images/avatar.png" alt="profile" class="explore-nav__avatar" />
+                <span>프로필</span>
+            </a>
+        </aside>
 
-    <!-- 메인 콘텐츠 -->
-    <main class="explore-main">
-      <!-- 탐색 그리드: JS로 동적 렌더링 -->
-      <section class="explore-grid" id="exploreGrid" aria-label="탐색 그리드"></section>
-      <!-- 검색 결과 없음 메시지 -->
-      <p class="explore-no-results" id="noResults" style="display: none;">
-        검색 결과가 없습니다.
-      </p>
-    </main>
-
-    <!-- 하단 네비게이션 -->
-    <nav class="bottom-nav" aria-label="메인 메뉴">
-      <a href="feed.html" class="bottom-nav__item" aria-label="홈">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-        </svg>
-      </a>
-      <a href="explore.html" class="bottom-nav__item bottom-nav__item--active" aria-label="탐색">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </a>
-      <a href="#" class="bottom-nav__item" aria-label="새 게시물">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
-        </svg>
-      </a>
-      <a href="#" class="bottom-nav__item" aria-label="좋아요">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
-      </a>
-      <a href="profile.html" class="bottom-nav__item" aria-label="프로필">
-        <img src="https://i.pravatar.cc/150?img=11" alt="내 프로필" class="bottom-nav__avatar">
-      </a>
-    </nav>
-  </div>
-
-  <script src="js/common.js"></script>
-  <script src="js/explore.js"></script>
+        <main class="explore">
+            <section class="explore__grid" id="exploreGrid">
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-01.svg" alt="explore item" />
+                </a>
+                <a class="explore__item explore__item--tall" href="#">
+                    <img src="assets/images/explore-02.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-03.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-04.svg" alt="explore item" />
+                </a>
+                <a class="explore__item explore__item--wide" href="#">
+                    <img src="assets/images/explore-05.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-06.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-07.svg" alt="explore item" />
+                </a>
+                <a class="explore__item explore__item--tall" href="#">
+                    <img src="assets/images/explore-08.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-09.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-10.svg" alt="explore item" />
+                </a>
+                <a class="explore__item explore__item--wide" href="#">
+                    <img src="assets/images/explore-11.svg" alt="explore item" />
+                </a>
+                <a class="explore__item" href="#">
+                    <img src="assets/images/explore-12.svg" alt="explore item" />
+                </a>
+            </section>
+        </main>
+    </div>
 </body>
+
 </html>
