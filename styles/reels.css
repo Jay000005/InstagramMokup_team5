@@ -9,9 +9,15 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #fff;
   color: #262626;
-  /* display: flex;  */
+  display: flex; 
   height: 100vh;
   overflow: hidden; /* 바디 전체 스크롤은 막음 */
+}
+
+/* 사이드바 너비만큼 공간 확보 */
+#sidebar {
+  width: 245px; /* 실제 사이드바 너비에 맞춰 조절 */
+  flex-shrink: 0; 
 }
 
 /* 3. 메인 콘텐츠 영역 (스크롤 스냅 핵심) */
@@ -175,9 +181,39 @@ body {
   height: 30px;
 }
 
-/* 화면 너비가 768px 이하일 때 (모바일/태블릿) */
+
+/* --- PC 레이아웃 (769px 이상) --- */
+@media (min-width: 769px) { 
+  body {
+    display: flex; /* 사이드바와 콘텐츠를 가로로 배치 */
+  }
+
+  #sidebar {
+    width: 245px;  /* 사이드바 너비만큼 딱 고정 */
+    flex-shrink: 0; /* 화면이 줄어도 사이드바가 찌그러지지 않게 함 */
+  }
+
+  .content-area {
+    flex-grow: 1;  /* 남은 공간을 콘텐츠 영역이 다 차지함 */
+  }
+}
+
+/* --- 모바일/태블릿 레이아웃 (768px 이하) --- */
 @media (max-width: 768px) {
+  body {
+    display: block; /* 가로 배치를 풀고 위아래로 쌓음 */
+    padding-bottom: 60px; /* mobile.css의 하단탭 공간 확보 */
+  }
+
   .reel-navigation {
-    display: none !important; /* 스크롤 버튼을 아예 제거 */
+    display: none !important; /* 상하 화살표 제거 */
+  }
+
+  #sidebar {
+    display: none; /* 사이드바 숨김 */
+  }
+
+  .content-area {
+    width: 100%; /* 콘텐츠가 화면을 꽉 채움 */
   }
 }
