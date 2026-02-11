@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/* =========================
+    홈 페이지 스크립트
+========================= */
 const btn = document.querySelector(".more-btn");
 const caption = btn.previousElementSibling;
 btn.addEventListener("click", () => caption.classList.toggle("caption-text-open"));
