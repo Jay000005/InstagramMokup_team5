@@ -8,7 +8,7 @@ body{
 .main-container{
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 2px;
   background-color: #ffffff;
   width: 100%;
 }
@@ -16,7 +16,7 @@ body{
 /* content */
 .content{
   flex: 1;
-  max-width: 630px;
+  max-width: 560px;
   min-width: 0;
   margin: 0 auto;
   margin-top: 24px;
@@ -349,11 +349,12 @@ body{
   display: inline;
 } */
 
-/* suggestions */
+/* suggestions: 공간 부족 시 줄어들어 가로 스크롤 방지 */
 .suggestions{
-  margin-right: 20px;
-  flex: 0 0 320px;
-  width: 320px;
+  margin-right: 4px;
+  flex: 1 1 320px;
+  max-width: 320px;
+  min-width: 260px;
   margin-top: 24px;
 }
 
@@ -576,7 +577,7 @@ body{
   }
 
   .main-container {
-    gap: 16px;
+    gap: 2px;
   }
 }
 
