@@ -5,6 +5,7 @@ body{
 
 /* layout*/
 .main-container{
+  box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   gap: 40px;
@@ -65,9 +66,10 @@ body{
   margin-bottom: 8px;
 }
 
+/* reset의 border-box 대비: 64px - 2px*2 = 60px 보이는 영역으로 맞춤 */
 .story-item img {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffffff;
@@ -363,6 +365,8 @@ body{
   flex: 0 0 auto; /* flex: 1 1 320px에서 변경 */
   width: 320px;
   margin-top: 24px;
+  font-size: 14px;  
+  line-height: 1.2; 
 }
 
 /* 내 프로필 */
