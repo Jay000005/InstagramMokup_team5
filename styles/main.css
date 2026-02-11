@@ -1,9 +1,9 @@
-/* .main-container {
+.main-container {
     background-color: var(--primary);
     margin-top: 0;
     margin-bottom: 0;
     display: flex;
-    padding-left: 244px;
+    padding-left: 80px;
 }
 
 .content-container {
@@ -294,6 +294,6 @@
 
 @media (min-width: 1024px) {
   .main-container {
-    padding-left: 244px;
+    padding-left: 80px;
   }
 }

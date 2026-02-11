@@ -8,7 +8,7 @@ body{
 .main-container{
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: 16px;
   background-color: #ffffff;
   width: 100%;
 }
@@ -351,7 +351,7 @@ body{
 
 /* suggestions */
 .suggestions{
-  margin-right: 40px;
+  margin-right: 20px;
   flex: 0 0 320px;
   width: 320px;
   margin-top: 24px;
@@ -558,6 +558,13 @@ body{
 
 /*  반응형  */
 
+/* 데스크톱: 공통 사이드바(80px 아이콘 바)가 fixed이므로 본문을 오른쪽으로 밀어줌 */
+@media (min-width: 1025px) {
+  .main-container {
+    padding-left: 80px;
+  }
+}
+
 @media (max-width: 1024px) {
   .suggestions {
     display: none;
@@ -570,19 +577,21 @@ body{
 
   .main-container {
     gap: 16px;
-    padding-left: 244px; /* 사이드바 너비만큼 딱 고정 */
   }
 }
 
 
 @media (max-width: 768px) {
-  .sidebar { display: none; }
+  #sidebar,
+  .sidebar { display: none !important; }
   .suggestions { display: none; }
 
   .mobile-topbar { display: flex; }
-  /* .mobile-bottombar { display: flex; } */
 
-  .main-container { gap: 0; }
+  .main-container {
+    gap: 0;
+    padding-left: 0; /* 모바일에서는 사이드바 없음 */
+  }
 
   .content {
     max-width: none;

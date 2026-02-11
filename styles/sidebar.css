@@ -2,20 +2,46 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 244px;
+  width: 80px;
   height: 100vh;
   padding: 24px 12px;
   border-right: 1px solid var(--border);
   background-color: var(--primary);
   display: flex;
   flex-direction: column;
+  transition: width 0.2s ease, box-shadow 0.2s ease;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  width: 244px;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+  z-index: 200;
 }
 
 .sidebar__logo {
   font-family: 'Pacifico', cursive;
   font-size: 24px;
   margin-bottom: 32px;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar:hover .sidebar__logo {
+  justify-content: flex-start;
   padding-left: 12px;
+}
+
+.sidebar__logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar:hover .sidebar__logo a {
+  justify-content: flex-start;
 }
 
 .sidebar__nav {
@@ -33,11 +59,25 @@
   text-decoration: none;
   color: var(--text-dark);
   font-size: 16px;
+  white-space: nowrap;
+}
+
+.sidebar__item span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.15s ease, width 0.15s ease;
+}
+
+.sidebar:hover .sidebar__item span {
+  opacity: 1;
+  width: auto;
 }
 
 .sidebar__item img {
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
 }
 
 .sidebar__item:hover {
