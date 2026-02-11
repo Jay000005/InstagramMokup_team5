@@ -23,7 +23,7 @@ body{
   margin-top: 24px;
   width: 100%; */
   flex: 0 0 auto; /* flex: 1에서 변경 */
-  max-width: 560px;
+  max-width: 630px;
   width: 100%; /* 고정 너비 */
   margin-top: 24px;
 }
@@ -366,7 +366,7 @@ body{
   width: 320px;
   margin-top: 24px;
   font-size: 14px;  
-  line-height: 1.2; 
+  line-height: 1.2;
 }
 
 /* 내 프로필 */
