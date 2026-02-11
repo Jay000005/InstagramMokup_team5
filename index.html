@@ -2,177 +2,404 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="refresh" content="0; url=feed.html"> -->
-    <title>Instagram</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/variables.css" />
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/sidebar.css" />
-    <link rel="stylesheet" href="styles/side.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/mobile.css" />
+    <link rel="stylesheet" href="styles/feed.css" />
+    <link rel="stylesheet" href="styles/side.css" />
+
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- <p>페이지를 이동 중입니다. 이동하지 않는다면 <a href="feed.html">여기</a>를 클릭하세요.</p> -->
-    <div id="sidebar"></div>
-    <div id="bottom-nav"></div>
 
-    <main class="main-container">
-        <section class="content-container">
-            <div class="content">
-                <div class="stories">
+  <!-- 모바일 상단바 -->
+  <header class="mobile-topbar">
+    <div class="mobile-topbar-left">
+      <span class="mobile-logo">Instagram</span>
+    </div>
 
-                    <div class="stories__content">
-                        <button class="story">
-                            <div class="story__avatar">
-                                <div class="story__border">
-                                    <svg width="64" height="64">
-                                        <circle r="31" cy="32" cx="32" />
-                                    </svg>
-                                </div>
-                                <div class="story__picture">
-                                    <img src="assets/images/avatar.png" alt="user picture" />
-                                </div>
-                            </div>
-                            <span class="story__user">user1</span>
-                        </button>
-                    </div>
+    <div class="mobile-topbar-center">
+      <div class="mobile-search">
+        <svg aria-label="검색" fill="currentColor" height="16" role="img" viewBox="0 0 24 24" width="16">
+          <title>검색</title>
+          <path d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z" fill="none"
+            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            x1="16.511" x2="22" y1="16.511" y2="22"></line>
+        </svg>
+        <input type="text" placeholder="검색" />
+      </div>
+    </div>
 
-                </div>
-                <div class="posts">
-                    <article class="post">
-                        <div class="post__header">
-                            <div class="post__profile">
-                                <a href="#" class="post__avatar">
-                                    <img src="assets/images/avatar.png" alt="user picture" />
-                                </a>
-                                <a href="#" class="post__user">user1</a>
-                            </div>
-                            <button class="post__more-options">
-                                <img src="assets/icons/more.svg" />
-                            </button>
-                        </div>
+    <div class="mobile-topbar-right">
+      <button class="icon-btn" type="button" aria-label="알림">
+        <img src="assets/icons/heart.svg" alt="알림" />
+      </button>
+    </div>
+  </header>
 
-                        <div class="post__content">
-                            <div class="post__medias">
-                                <img class="post__media" src="assets/images/picture.jpeg" alt="post content" />
-                            </div>
-                        </div>
 
-                        <div class="post__footer">
-                            <div class="post__buttons">
-                                <button class="post__button">
-                                    <img src="assets/icons/heart.svg" alt="heart" />
-                                </button>
-                                <button class="post__button">
-                                    <img src="assets/icons/comment.svg" alt="comment" />
-                                </button>
-                                <button class="post__button post__button--align-right">
-                                    <img src="assets/icons/bookmark.svg" alt="bookmark" />
-                                </button>
-                            </div>
-                            <div class="post__infos">
-                                <div class="post__likes">
-                                    <a href="#" class="post__likes-avatar">
-                                        <img src="assets/images/avatar.png" alt="user picture" />
-                                    </a>
+  <div class="main-container">
 
-                                    <span>Liked by
-                                        <a class="post__name--underline" href="#">user2</a> and
-                                        <a href="#">33 others</a>
-                                    </span>
-                                </div>
+    <!-- 왼쪽 사이드바 -->
+    <aside class="sidebar">
+      <div class="logo">
+        <svg aria-label="Instagram" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+          <title>Instagram</title>
+          <path
+            d="M12 2.982c2.937 0 3.285.011 4.445.064a6.087 6.087 0 0 1 2.042.379 3.408 3.408 0 0 1 1.265.823 3.408 3.408 0 0 1 .823 1.265 6.087 6.087 0 0 1 .379 2.042c.053 1.16.064 1.508.064 4.445s-.011 3.285-.064 4.445a6.087 6.087 0 0 1-.379 2.042 3.643 3.643 0 0 1-2.088 2.088 6.087 6.087 0 0 1-2.042.379c-1.16.053-1.508.064-4.445.064s-3.285-.011-4.445-.064a6.087 6.087 0 0 1-2.043-.379 3.408 3.408 0 0 1-1.264-.823 3.408 3.408 0 0 1-.823-1.265 6.087 6.087 0 0 1-.379-2.042c-.053-1.16-.064-1.508-.064-4.445s.011-3.285.064-4.445a6.087 6.087 0 0 1 .379-2.042 3.408 3.408 0 0 1 .823-1.265 3.408 3.408 0 0 1 1.265-.823 6.087 6.087 0 0 1 2.042-.379c1.16-.053 1.508-.064 4.445-.064M12 1c-2.987 0-3.362.013-4.535.066a8.074 8.074 0 0 0-2.67.511 5.392 5.392 0 0 0-1.949 1.27 5.392 5.392 0 0 0-1.269 1.948 8.074 8.074 0 0 0-.51 2.67C1.012 8.638 1 9.013 1 12s.013 3.362.066 4.535a8.074 8.074 0 0 0 .511 2.67 5.392 5.392 0 0 0 1.27 1.949 5.392 5.392 0 0 0 1.948 1.269 8.074 8.074 0 0 0 2.67.51C8.638 22.988 9.013 23 12 23s3.362-.013 4.535-.066a8.074 8.074 0 0 0 2.67-.511 5.625 5.625 0 0 0 3.218-3.218 8.074 8.074 0 0 0 .51-2.67C22.988 15.362 23 14.987 23 12s-.013-3.362-.066-4.535a8.074 8.074 0 0 0-.511-2.67 5.392 5.392 0 0 0-1.27-1.949 5.392 5.392 0 0 0-1.948-1.269 8.074 8.074 0 0 0-2.67-.51C15.362 1.012 14.987 1 12 1Zm0 5.351A5.649 5.649 0 1 0 17.649 12 5.649 5.649 0 0 0 12 6.351Zm0 9.316A3.667 3.667 0 1 1 15.667 12 3.667 3.667 0 0 1 12 15.667Zm5.872-10.859a1.32 1.32 0 1 0 1.32 1.32 1.32 1.32 0 0 0-1.32-1.32Z">
+          </path>
+        </svg>
+      </div>
 
-                                <div class="post__description">
-                                    <span>
-                                        <a class="post__name--underline" href="#">
-                                            user
-                                        </a>
-                                        description
-                                    </span>
-                                </div>
+      <nav class="sidebar-nav">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="#"><img src="assets/icons/home.svg" alt="홈" /><span>홈</span></a>
+          </li>
+          <li class="menu-item">
+            <a href="#"><img src="assets/icons/reels.svg" alt="릴스" /><span>릴스</span></a>
+          </li>
+          <li class="menu-item">
+            <a href="#"><img src="assets/icons/share.svg" alt="메세지" /><span>메세지</span></a>
+          </li>
+          <li class="menu-item">
+            <a href="#">
+              <svg aria-label="검색" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                <title>검색</title>
+                <path d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z" fill="none"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" x1="16.511" x2="22" y1="16.511" y2="22"></line>
+              </svg>
+              <span>검색</span>
+            </a>
+          </li>
 
-                                <span class="post__date-time">30 minutes ago</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
+          <li class="menu-item">
+            <a href="#">
+              <svg aria-label="탐색 탭" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                <title>탐색 탭</title>
+                <polygon fill="none"
+                  points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                <polygon fill-rule="evenodd"
+                  points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056">
+                </polygon>
+                <circle cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+              </svg>
+              <span>탐색 탭</span>
+            </a>
+          </li>
 
-            <div class="side-menu">
-                <div class="side-menu__user-profile">
-                    <a href="#" class="side-menu__user-avatar">
-                        <img src="assets/images/avatar.png" alt="user picture" />
-                    </a>
-                    <div class="side-menu__user-info">
-                        <a href="#">user1</a>
-                        <span>nickname</span>
-                    </div>
-                    <button class="side-menu__user-button">
-                        Switch
-                    </button>
-                </div>
-                <div class="side-menu__suggestions-section">
-                    <div class="side-menu__suggestions-header">
-                        <h2>Suggestions for you</h2>
-                        <button>See All</button>
-                    </div>
-                    <div class="side-menu__suggestions-content">
-                        <div class="side-menu__suggestion">
-                            <a href="#" class="side-menu__suggestion-avatar">
-                                <img src="assets/images/avatar.png" alt="user picture" />
-                            </a>
-                            <div class="side-menu__suggestion-info">
-                                <a href="#">
-                                    user11
-                                </a>
-                                <span>Followed by user2, user3 and others</span>
-                            </div>
-                            <button class="side-menu__suggestion-button">Follow</button>
-                        </div>
-                        <div class="side-menu__suggestion">
-                            <a href="#" class="side-menu__suggestion-avatar">
-                                <img src="assets/images/avatar.png" alt="user picture" />
-                            </a>
-                            <div class="side-menu__suggestion-info">
-                                <a href="#">
-                                    user11
-                                </a>
-                                <span>Followed by user2, user3 and others</span>
-                            </div>
-                            <button class="side-menu__suggestion-button">Follow</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="side-menu__footer">
-                    <div class="side-menu__footer-links">
-                        <ul class="side-menu__footer-list">
-                            <li class="side-menu__footer-item">
-                                <a class="side-menu__footer-link">About</a>
-                            </li>
-                            <li class="side-menu__footer-item">
-                                <a class="side-menu__footer-link">Help</a>
-                            </li>
-                            <li class="side-menu__footer-item">
-                                <a class="side-menu__footer-link">Press</a>
-                            </li>
-                            <li class="side-menu__footer-item">
-                                <a class="side-menu__footer-link">API</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <span class="side-menu__footer-copyright">&copy; 2023 instagram from facebook</span>
-                </div>
-            </div>
+          <li class="menu-item">
+            <a href="#"><img src="assets/icons/heart.svg" alt="알림" /><span>알림</span></a>
+          </li>
+          <li class="menu-item">
+            <a href="#"><img src="assets/icons/add.svg" alt="만들기" /><span>만들기</span></a>
+          </li>
+          <li class="menu-item">
+            <a href="#"><img class="menu-avatar" src="assets/images/profile.jpeg" alt="프로필" /><span>프로필</span></a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+
+    <!-- 가운데 콘텐츠 -->
+    <main class="content">
+
+      <!-- story -->
+      <div class="story-container">
+        <section class="story-bar">
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/1.jpeg" alt="p1" /></div>
+            <p>hoonIdang</p>
+          </div>
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/2.jpeg" alt="p2" /></div>
+            <p>jeejby</p>
+          </div>
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/3.jpeg" alt="p3" /></div>
+            <p>moresoju...</p>
+          </div>
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/4.jpeg" alt="p4" /></div>
+            <p>hanni_della</p>
+          </div>
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/5.jpeg" alt="p5" /></div>
+            <p>happyhar...</p>
+          </div>
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/6.jpeg" alt="p6" /></div>
+            <p>kxxmjeee...</p>
+          </div>
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/7.jpg" alt="p7" /></div>
+            <p>noodle.zip</p>
+          </div>
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/8.jpg" alt="p8" /></div>
+            <p>199.vely</p>
+          </div>
+          <div class="story-item">
+            <div class="img-wrapper"><img src="assets/images/profile.jpeg" alt="p9" /></div>
+            <p>waahth.12</p>
+          </div>
         </section>
+
+        <button class="prev-btn" type="button" aria-label="이전 스토리">
+          <span class="arrow-icon-left"></span>
+        </button>
+        <button class="next-btn" type="button" aria-label="다음 스토리">
+          <span class="arrow-icon"></span>
+        </button>
+      </div>
+
+
+      <!-- feed -->
+      <section class="feed">
+
+        <!-- post 1 -->
+        <div class="post">
+          <div class="header">
+            <div class="header-left">
+              <img src="assets/images/1.jpeg" alt="feedprofile1" />
+              <p>nga.trik</p>
+              <span class="dot">•</span>
+              <span class="time">1일</span>
+            </div>
+            <button class="header-right" type="button" aria-label="옵션 더 보기">
+              <svg aria-label="옵션 더 보기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                <title>옵션 더 보기</title>
+                <circle cx="12" cy="12" r="1.5"></circle>
+                <circle cx="6" cy="12" r="1.5"></circle>
+                <circle cx="18" cy="12" r="1.5"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <div class="media">
+            <img src="assets/images/feed1.jpg" alt="feedimage1" />
+          </div>
+
+          <div class="actions">
+            <div class="actions-left">
+              <button class="icon-with-text" type="button">
+                <svg aria-label="좋아요" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <title>좋아요</title>
+                  <path
+                    d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                  </path>
+                </svg>
+                <span class="count">2.4천</span>
+              </button>
+
+              <button class="icon-with-text" type="button">
+                <svg aria-label="댓글 달기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <title>댓글 달기</title>
+                  <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="none"
+                    stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <span class="count">1</span>
+              </button>
+
+              <button type="button">
+                <svg aria-label="공유하기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <title>공유하기</title>
+                  <path
+                    d="M13.973 20.046 21.77 6.928C22.8 5.195 21.55 3 19.535 3H4.466C2.138 3 .984 5.825 2.646 7.456l4.842 4.752 1.723 7.121c.548 2.266 3.571 2.721 4.762.717Z"
+                    fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+                  <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" x1="7.488" x2="15.515" y1="12.208" y2="7.641"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="actions-right">
+              <button type="button">
+                <svg aria-label="저장" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <title>저장</title>
+                  <polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21"
+                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="content-body">
+            <div class="body-text">
+              <span>nga.trik</span>
+              <span class="caption-text">🍀</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- post 2 -->
+        <div class="post">
+          <div class="header">
+            <div class="header-left">
+              <img src="assets/images/2.jpeg" alt="feedprofile2" />
+              <p>hanni_della</p>
+              <span class="dot">•</span>
+              <span class="time">4시간</span>
+            </div>
+            <button class="header-right" type="button" aria-label="옵션 더 보기">
+              <svg aria-label="옵션 더 보기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                <title>옵션 더 보기</title>
+                <circle cx="12" cy="12" r="1.5"></circle>
+                <circle cx="6" cy="12" r="1.5"></circle>
+                <circle cx="18" cy="12" r="1.5"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <div class="media">
+            <img src="assets/images/feed2.jpg" alt="feedimage2" />
+          </div>
+
+          <div class="actions">
+            <div class="actions-left">
+              <button class="icon-with-text" type="button">
+                <svg aria-label="좋아요" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <title>좋아요</title>
+                  <path
+                    d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.260.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                  </path>
+                </svg>
+                <span class="count">7.5천</span>
+              </button>
+
+              <button class="icon-with-text" type="button">
+                <svg aria-label="댓글 달기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <title>댓글 달기</title>
+                  <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="none"
+                    stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <span class="count">253</span>
+              </button>
+
+              <button type="button">
+                <svg aria-label="공유하기" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <title>공유하기</title>
+                  <path
+                    d="M13.973 20.046 21.77 6.928C22.8 5.195 21.55 3 19.535 3H4.466C2.138 3 .984 5.825 2.646 7.456l4.842 4.752 1.723 7.121c.548 2.266 3.571 2.721 4.762.717Z"
+                    fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+                  <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" x1="7.488" x2="15.515" y1="12.208" y2="7.641"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="actions-right">
+              <button type="button">
+                <svg aria-label="저장" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+                  <title>저장</title>
+                  <polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21"
+                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="content-body">
+            <div class="body-text">
+              <span>hanni_della</span>
+              <span class="caption-text">내 이름은 '아무거나스 안가리고스 마구머거스'야</span>
+              <button class="more-btn" type="button">...더보기</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
     </main>
+
+
+    <!-- 오른쪽 추천 -->
+    <aside class="suggestions">
+      <div class="my-profile">
+        <div class="my-left">
+          <img class="my-avatar" src="assets/images/profile2.jpg" alt="my-profile" />
+          <div class="my-text">
+            <div class="my-id">ahollo_1</div>
+            <div class="my-name">다은</div>
+          </div>
+        </div>
+        <button class="switch-btn" type="button">전환</button>
+      </div>
+
+      <div class="suggest-list">
+        <div class="suggest-header">
+          <p>회원님을 위한 추천</p>
+          <button type="button">모두 보기</button>
+        </div>
+
+        <ul class="suggest-items">
+          <li class="suggest-item">
+            <div class="s-left">
+              <img src="assets/images/1.jpeg" alt="추천1" />
+              <div class="s-text">
+                <div class="s-id">HANPIG</div>
+                <div class="s-sub">회원님을 위한 추천</div>
+              </div>
+            </div>
+            <button class="follow-btn" type="button">팔로우</button>
+          </li>
+
+          <li class="suggest-item">
+            <div class="s-left">
+              <img src="assets/images/2.jpeg" alt="추천2" />
+              <div class="s-text">
+                <div class="s-id">omnibbe_11</div>
+                <div class="s-sub">회원님을 위한 추천</div>
+              </div>
+            </div>
+            <button class="follow-btn" type="button">팔로우</button>
+          </li>
+
+          <li class="suggest-item">
+            <div class="s-left">
+              <img src="assets/images/3.jpeg" alt="추천3" />
+              <div class="s-text">
+                <div class="s-id">건강해보영</div>
+                <div class="s-sub">인기</div>
+              </div>
+            </div>
+            <button class="follow-btn" type="button">팔로우</button>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+
+  <!-- 모바일 하단바 -->
+  <nav class="mobile-bottombar">
+    <a href="#" aria-label="홈"><img src="assets/icons/home.svg" alt="홈" /></a>
+    <a href="#" aria-label="검색">
+      <svg aria-label="검색" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24">
+        <title>검색</title>
+        <path d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z" fill="none"
+          stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" x1="16.511" x2="22" y1="16.511" y2="22"></line>
+      </svg>
+    </a>
+    <a href="#" aria-label="만들기"><img src="assets/icons/add.svg" alt="만들기" /></a>
+    <a href="#" aria-label="릴스"><img src="assets/icons/reels.svg" alt="릴스" /></a>
+    <a href="#" aria-label="프로필"><img class="bottom-avatar" src="assets/images/profile.jpeg" alt="프로필" /></a>
+  </nav>
 
 </body>
 
