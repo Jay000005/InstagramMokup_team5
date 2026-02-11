@@ -25,6 +25,8 @@ img {
 
     --text-dark: #262626;
     --text-light: #999999;
+
+    --hover: #efefef; /* 호버 색상 */
 }
 
 :root.darkTheme {
