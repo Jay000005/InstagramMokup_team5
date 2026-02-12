@@ -13,43 +13,47 @@
 
 <body>
     <div class="explore-layout" id="exploreLayout">
-        <button class="explore-nav-toggle" id="exploreNavToggle" aria-expanded="false" aria-controls="exploreNav">
-            탐색 탭
-        </button>
-        <div class="explore-nav-scrim" id="exploreNavScrim" aria-hidden="true"></div>
         <aside class="explore-nav" id="exploreNav">
-            <div class="explore-nav__logo">Instagram</div>
+            <div class="explore-nav__logo">
+                <img src="assets/icons/logo.svg" alt="Instagram" />
+                <span class="explore-nav__label">Instagram</span>
+            </div>
             <a class="explore-nav__item" href="index.html">
                 <img src="assets/icons/home.svg" alt="home" />
-                <span>홈</span>
+                <span class="explore-nav__label">홈</span>
             </a>
             <a class="explore-nav__item" href="#">
                 <img src="assets/icons/search.svg" alt="search" />
-                <span>검색</span>
+                <span class="explore-nav__label">검색</span>
             </a>
             <a class="explore-nav__item explore-nav__item--active" href="explore.html">
                 <span class="explore-nav__dot">●</span>
-                <span>탐색 탭</span>
+                <span class="explore-nav__label">탐색 탭</span>
             </a>
             <a class="explore-nav__item" href="#">
                 <img src="assets/icons/reels.svg" alt="reels" />
-                <span>릴스</span>
+                <span class="explore-nav__label">릴스</span>
             </a>
             <a class="explore-nav__item" href="#">
                 <img src="assets/icons/messenger.svg" alt="message" />
-                <span>메시지</span>
+                <span class="explore-nav__label">메시지</span>
             </a>
             <a class="explore-nav__item" href="#">
                 <img src="assets/icons/heart.svg" alt="notifications" />
-                <span>알림</span>
+                <span class="explore-nav__label">알림</span>
             </a>
             <a class="explore-nav__item" href="#">
                 <span class="explore-nav__plus">+</span>
-                <span>만들기</span>
+                <span class="explore-nav__label">만들기</span>
             </a>
             <a class="explore-nav__item" href="#">
                 <img src="assets/images/avatar.png" alt="profile" class="explore-nav__avatar" />
-                <span>프로필</span>
+                <span class="explore-nav__label">프로필</span>
+            </a>
+            <div class="explore-nav__spacer"></div>
+            <a class="explore-nav__item" href="#">
+                <span class="explore-nav__more">≡</span>
+                <span class="explore-nav__label">더 보기</span>
             </a>
         </aside>
 
@@ -93,6 +97,30 @@
                 </a>
             </section>
         </main>
+    </div>
+
+    <div class="explore-modal" id="exploreModal" aria-hidden="true">
+        <div class="explore-modal__backdrop" data-close-modal></div>
+        <section class="explore-modal__dialog" role="dialog" aria-modal="true" aria-label="게시물 상세">
+            <button class="explore-modal__close" type="button" aria-label="닫기" data-close-modal>×</button>
+            <div class="explore-modal__media" id="exploreModalMedia"></div>
+            <aside class="explore-modal__panel">
+                <header class="explore-modal__header">
+                    <img src="assets/images/avatar.png" alt="profile" />
+                    <strong id="exploreModalAuthor">instagram_user</strong>
+                </header>
+                <div class="explore-modal__comments" id="exploreModalComments"></div>
+                <footer class="explore-modal__footer">
+                    <div class="explore-modal__stats">
+                        <span id="exploreModalLikes">좋아요 0개</span>
+                        <span id="exploreModalCount">댓글 0개</span>
+                    </div>
+                    <label class="explore-modal__input-wrap">
+                        <input class="explore-modal__input" type="text" placeholder="댓글 달기..." />
+                    </label>
+                </footer>
+            </aside>
+        </section>
     </div>
 </body>
 
