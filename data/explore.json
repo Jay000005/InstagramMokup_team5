@@ -1,177 +1,122 @@
 [
   {
     "id": 1,
-    "src": "assets/images/explore-01.svg",
+    "src": "assets/images/explore-real/explore-real-01.jpg",
     "size": "square",
-    "likes": 3106,
-    "comments": 165
+    "mediaType": "reel",
+    "author": "subingsoo",
+    "likes": 51234,
+    "comments": 1298,
+    "alt": "수빙수 영상 캡처"
   },
   {
     "id": 2,
-    "src": "assets/images/explore-02.svg",
-    "size": "tall",
-    "likes": 924,
-    "comments": 125,
-    "badge": "video"
+    "src": "assets/images/explore-real/explore-real-02.jpg",
+    "size": "square",
+    "mediaType": "reel",
+    "author": "trendzip",
+    "likes": 84210,
+    "comments": 2043,
+    "alt": "오늘 급하게 마지막 영상 올리고 인사한 백만 유튜버"
   },
   {
     "id": 3,
-    "src": "assets/images/explore-03.svg",
+    "src": "assets/images/explore-real/explore-real-10.jpg",
     "size": "square",
-    "likes": 1000,
-    "comments": 31
+    "mediaType": "reel",
+    "author": "meme_school",
+    "likes": 19877,
+    "comments": 286,
+    "alt": "아빠의 모교 입학했는데 밈 영상"
   },
   {
     "id": 4,
-    "src": "assets/images/explore-04.svg",
+    "src": "assets/images/explore-real/explore-real-04.jpg",
     "size": "square",
-    "likes": 723,
-    "comments": 170
+    "mediaType": "photo",
+    "author": "keyboard_life",
+    "likes": 9322,
+    "comments": 117,
+    "alt": "핑크 키보드 노트북"
   },
   {
     "id": 5,
-    "src": "assets/images/explore-05.svg",
-    "size": "wide",
-    "likes": 690,
-    "comments": 117,
-    "badge": "multi"
+    "src": "assets/images/explore-real/explore-real-05.jpg",
+    "size": "square",
+    "mediaType": "reel",
+    "author": "idol_issue",
+    "likes": 67112,
+    "comments": 1820,
+    "alt": "연예인병 논란 아이돌 스태프"
   },
   {
     "id": 6,
-    "src": "assets/images/explore-06.svg",
+    "src": "assets/images/explore-real/explore-real-06.jpg",
     "size": "square",
-    "likes": 2263,
-    "comments": 50
+    "mediaType": "photo",
+    "author": "daiso_pick",
+    "likes": 12344,
+    "comments": 267,
+    "alt": "직장인 추천템"
   },
   {
     "id": 7,
-    "src": "assets/images/explore-07.svg",
+    "src": "assets/images/explore-real/explore-real-07.jpg",
     "size": "square",
-    "likes": 1890,
-    "comments": 182
+    "mediaType": "reel",
+    "author": "campus_clip",
+    "likes": 27100,
+    "comments": 503,
+    "alt": "너의 학점은"
   },
   {
     "id": 8,
-    "src": "assets/images/explore-08.svg",
-    "size": "tall",
-    "likes": 2163,
-    "comments": 121
+    "src": "assets/images/explore-real/explore-real-08.jpg",
+    "size": "square",
+    "mediaType": "reel",
+    "author": "tech_short",
+    "likes": 36112,
+    "comments": 711,
+    "alt": "이게 컴퓨터라고"
   },
   {
     "id": 9,
-    "src": "assets/images/explore-09.svg",
+    "src": "assets/images/explore-real/explore-real-09.jpg",
     "size": "square",
-    "likes": 581,
-    "comments": 61,
-    "badge": "video"
+    "mediaType": "reel",
+    "author": "keyboard_pick",
+    "likes": 29403,
+    "comments": 422,
+    "alt": "저소음 키보드 취향"
   },
   {
     "id": 10,
-    "src": "assets/images/explore-10.svg",
+    "src": "assets/images/explore-real/explore-real-01.jpg",
     "size": "square",
-    "likes": 2966,
-    "comments": 63
+    "mediaType": "reel",
+    "author": "shorts_pick",
+    "likes": 17645,
+    "comments": 298,
+    "alt": "이슈 쇼츠 클립"
   },
   {
     "id": 11,
-    "src": "assets/images/explore-11.svg",
-    "size": "wide",
-    "likes": 2418,
-    "comments": 17
+    "src": "assets/images/explore-real/explore-real-04.jpg",
+    "size": "square",
+    "mediaType": "photo",
+    "author": "desk_setup",
+    "likes": 8831,
+    "comments": 96,
+    "alt": "데스크 셋업 사진"
   },
   {
     "id": 12,
-    "src": "assets/images/explore-12.svg",
+    "src": "assets/images/explore-real/explore-real-06.jpg",
     "size": "square",
-    "likes": 812,
-    "comments": 6,
-    "badge": "multi"
-  },
-  {
-    "id": 13,
-    "src": "assets/images/explore-01.svg",
-    "size": "square",
-    "likes": 2033,
-    "comments": 131
-  },
-  {
-    "id": 14,
-    "src": "assets/images/explore-02.svg",
-    "size": "tall",
-    "likes": 947,
-    "comments": 74
-  },
-  {
-    "id": 15,
-    "src": "assets/images/explore-03.svg",
-    "size": "square",
-    "likes": 1487,
-    "comments": 67
-  },
-  {
-    "id": 16,
-    "src": "assets/images/explore-04.svg",
-    "size": "square",
-    "likes": 1794,
-    "comments": 101,
-    "badge": "video"
-  },
-  {
-    "id": 17,
-    "src": "assets/images/explore-05.svg",
-    "size": "wide",
-    "likes": 1837,
-    "comments": 8
-  },
-  {
-    "id": 18,
-    "src": "assets/images/explore-06.svg",
-    "size": "square",
-    "likes": 1473,
-    "comments": 81
-  },
-  {
-    "id": 19,
-    "src": "assets/images/explore-07.svg",
-    "size": "square",
-    "likes": 3165,
-    "comments": 13,
-    "badge": "multi"
-  },
-  {
-    "id": 20,
-    "src": "assets/images/explore-08.svg",
-    "size": "tall",
-    "likes": 2636,
-    "comments": 152
-  },
-  {
-    "id": 21,
-    "src": "assets/images/explore-09.svg",
-    "size": "square",
-    "likes": 2790,
-    "comments": 235
-  },
-  {
-    "id": 22,
-    "src": "assets/images/explore-10.svg",
-    "size": "square",
-    "likes": 2990,
-    "comments": 238
-  },
-  {
-    "id": 23,
-    "src": "assets/images/explore-11.svg",
-    "size": "wide",
-    "likes": 1064,
-    "comments": 114,
-    "badge": "video"
-  },
-  {
-    "id": 24,
-    "src": "assets/images/explore-12.svg",
-    "size": "square",
-    "likes": 2162,
-    "comments": 119
+    "mediaType": "photo",
+    "author": "daily_pick",
+    "likes": 7450,
+    "comments": 82,
+    "alt": "데일리 추천템 사진"
   }
 ]

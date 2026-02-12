@@ -1,7 +1,12 @@
 const grid = document.getElementById("exploreGrid");
-const layout = document.getElementById("exploreLayout");
-const navToggle = document.getElementById("exploreNavToggle");
-const navScrim = document.getElementById("exploreNavScrim");
+const modal = document.getElementById("exploreModal");
+const modalMedia = document.getElementById("exploreModalMedia");
+const modalComments = document.getElementById("exploreModalComments");
+const modalLikes = document.getElementById("exploreModalLikes");
+const modalCount = document.getElementById("exploreModalCount");
+const modalAuthor = document.getElementById("exploreModalAuthor");
+const inlineExploreData = document.getElementById("exploreData");
+let activeItem = null;
 
 function sizeClass(size) {
     if (size === "tall") return "explore__item--tall";
@@ -9,75 +14,163 @@ function sizeClass(size) {
     return "";
 }
 
-function badgeLabel(badge) {
-    if (badge === "video") return "VIDEO";
-    if (badge === "multi") return "MULTI";
+function mediaClass(mediaType) {
+    if (mediaType === "reel") return "explore__item--reel";
+    if (mediaType === "photo") return "explore__item--photo";
+    if (mediaType === "carousel") return "explore__item--carousel";
     return "";
+}
+
+function renderBadge(mediaType) {
+    if (mediaType === "reel") {
+        return `
+            <span class="explore__badge explore__badge--reel" aria-label="reel">
+                <img src="assets/icons/reels.svg" alt="reel" />
+            </span>
+        `;
+    }
+
+    if (mediaType === "carousel") {
+        return `<span class="explore__badge explore__badge--carousel" aria-label="carousel"></span>`;
+    }
+
+    return "";
+}
+
+function formatCount(value) {
+    return Number(value ?? 0).toLocaleString("ko-KR");
+}
+
+function defaultComments(item) {
+    const title = item.alt || "재밌는 게시물";
+    return [
+        { user: "daily_zip", text: `${title} 진짜 유용하네요.` },
+        { user: "mood_93", text: "저장하고 따라해볼게요!" },
+        { user: "today.pick", text: "다음 편도 기다릴게요 👀" }
+    ];
+}
+
+function renderComments(comments) {
+    if (!modalComments) return;
+
+    modalComments.innerHTML = comments
+        .map(
+            (comment) => `
+                <article class="explore-modal__comment">
+                    <strong>${comment.user}</strong>
+                    <p>${comment.text}</p>
+                </article>
+            `
+        )
+        .join("");
+}
+
+function renderModalMedia(item) {
+    if (!modalMedia) return;
+
+    if (item.mediaType === "reel" && item.videoSrc) {
+        modalMedia.innerHTML = `
+            <video src="${item.videoSrc}" controls autoplay muted loop playsinline></video>
+        `;
+        return;
+    }
+
+    modalMedia.innerHTML = `
+        <img src="${item.src}" alt="${item.alt || "explore item"}" />
+    `;
+}
+
+function openModal(item) {
+    if (!modal) return;
+    activeItem = item;
+
+    renderModalMedia(item);
+    renderComments(item.commentList || defaultComments(item));
+
+    if (modalLikes) modalLikes.textContent = `좋아요 ${formatCount(item.likes)}개`;
+    if (modalCount) modalCount.textContent = `댓글 ${formatCount(item.comments)}개`;
+    if (modalAuthor) modalAuthor.textContent = item.author || "instagram_user";
+
+    modal.classList.add("explore-modal--open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("explore-modal-open");
+}
+
+function closeModal() {
+    if (!modal) return;
+    activeItem = null;
+    modal.classList.remove("explore-modal--open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("explore-modal-open");
+}
+
+function bindModalEvents() {
+    if (!modal) return;
+
+    modal.addEventListener("click", (event) => {
+        if (event.target.closest("[data-close-modal]")) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && activeItem) {
+            closeModal();
+        }
+    });
 }
 
 async function loadExplore() {
     if (!grid) return;
 
-    const res = await fetch("data/explore.json");
-    if (!res.ok) throw new Error("Failed to load explore.json");
+    let items = [];
+    try {
+        const res = await fetch("data/explore.json");
+        if (!res.ok) throw new Error("Failed to load explore.json");
+        items = await res.json();
+    } catch (error) {
+        if (inlineExploreData?.textContent) {
+            items = JSON.parse(inlineExploreData.textContent);
+        } else {
+            throw error;
+        }
+    }
 
-    const items = await res.json();
     grid.innerHTML = "";
 
     items.forEach((item) => {
         const a = document.createElement("a");
-        a.className = ["explore__item", sizeClass(item.size)].filter(Boolean).join(" ");
+        const classes = ["explore__item", sizeClass(item.size), mediaClass(item.mediaType)];
+        a.className = classes.filter(Boolean).join(" ");
         a.href = item.href || "#";
 
-        const img = document.createElement("img");
-        img.src = item.src;
-        img.alt = item.alt || "explore item";
-
-        const overlay = document.createElement("div");
-        overlay.className = "explore__overlay";
-        overlay.innerHTML = `
-            <span class="explore__metric">
-                <img src="assets/icons/heart.svg" alt="likes" />
-                ${item.likes ?? 0}
-            </span>
-            <span class="explore__metric">
-                <img src="assets/icons/comment.svg" alt="comments" />
-                ${item.comments ?? 0}
-            </span>
+        a.innerHTML = `
+            ${renderBadge(item.mediaType)}
+            <img src="${item.src}" alt="${item.alt || "explore item"}" />
+            <div class="explore__overlay">
+                <span class="explore__metric">
+                    <img src="assets/icons/heart.svg" alt="likes" />
+                    ${item.likes ?? 0}
+                </span>
+                <span class="explore__metric">
+                    <img src="assets/icons/comment.svg" alt="comments" />
+                    ${item.comments ?? 0}
+                </span>
+            </div>
         `;
 
-        if (item.badge) {
-            const badge = document.createElement("span");
-            badge.className = "explore__badge";
-            badge.textContent = badgeLabel(item.badge);
-            a.appendChild(badge);
-        }
+        a.addEventListener("click", (event) => {
+            event.preventDefault();
+            openModal(item);
+        });
 
-        a.appendChild(img);
-        a.appendChild(overlay);
         grid.appendChild(a);
     });
 }
 
-function bindNavToggle() {
-    if (!layout || !navToggle || !navScrim) return;
-
-    const setOpen = (open) => {
-        layout.classList.toggle("explore-layout--nav-open", open);
-        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    };
-
-    navToggle.addEventListener("click", () => {
-        const isOpen = layout.classList.contains("explore-layout--nav-open");
-        setOpen(!isOpen);
-    });
-
-    navScrim.addEventListener("click", () => setOpen(false));
-}
-
 async function init() {
     try {
-        bindNavToggle();
+        bindModalEvents();
         await loadExplore();
     } catch (err) {
         console.error(err);

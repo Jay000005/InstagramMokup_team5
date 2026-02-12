@@ -24,45 +24,49 @@
     <div class="explore-layout" id="exploreLayout">
         
         <main class="explore">
-            <section class="explore__grid" id="exploreGrid">
-                <a class="explore__item" href="#">
-                    <img src="assets/images/explore-01.svg" alt="explore item" />
-                </a>
-                <a class="explore__item explore__item--tall" href="#">
-                    <img src="assets/images/explore-02.svg" alt="explore item" />
-                </a>
-                <a class="explore__item" href="#">
-                    <img src="assets/images/explore-03.svg" alt="explore item" />
-                </a>
-                <a class="explore__item" href="#">
-                    <img src="assets/images/explore-04.svg" alt="explore item" />
-                </a>
-                <a class="explore__item explore__item--wide" href="#">
-                    <img src="assets/images/explore-05.svg" alt="explore item" />
-                </a>
-                <a class="explore__item" href="#">
-                    <img src="assets/images/explore-06.svg" alt="explore item" />
-                </a>
-                <a class="explore__item" href="#">
-                    <img src="assets/images/explore-07.svg" alt="explore item" />
-                </a>
-                <a class="explore__item explore__item--tall" href="#">
-                    <img src="assets/images/explore-08.svg" alt="explore item" />
-                </a>
-                <a class="explore__item" href="#">
-                    <img src="assets/images/explore-09.svg" alt="explore item" />
-                </a>
-                <a class="explore__item" href="#">
-                    <img src="assets/images/explore-10.svg" alt="explore item" />
-                </a>
-                <a class="explore__item explore__item--wide" href="#">
-                    <img src="assets/images/explore-11.svg" alt="explore item" />
-                </a>
-                <a class="explore__item" href="#">
-                    <img src="assets/images/explore-12.svg" alt="explore item" />
-                </a>
-            </section>
+            <section class="explore__grid" id="exploreGrid"></section>
         </main>
+    </div>
+
+    <script id="exploreData" type="application/json">
+        [
+            { "id": 1, "src": "assets/images/explore-real/explore-real-01.jpg", "size": "square", "mediaType": "reel", "author": "subingsoo", "likes": 51234, "comments": 1298, "alt": "수빙수 영상 캡처" },
+            { "id": 2, "src": "assets/images/explore-real/explore-real-02.jpg", "size": "square", "mediaType": "reel", "author": "trendzip", "likes": 84210, "comments": 2043, "alt": "오늘 급하게 마지막 영상 올리고 인사한 백만 유튜버" },
+            { "id": 3, "src": "assets/images/explore-real/explore-real-10.jpg", "size": "square", "mediaType": "reel", "author": "meme_school", "likes": 19877, "comments": 286, "alt": "아빠의 모교 입학했는데 밈 영상" },
+            { "id": 4, "src": "assets/images/explore-real/explore-real-04.jpg", "size": "square", "mediaType": "photo", "author": "keyboard_life", "likes": 9322, "comments": 117, "alt": "핑크 키보드 노트북" },
+            { "id": 5, "src": "assets/images/explore-real/explore-real-05.jpg", "size": "square", "mediaType": "reel", "author": "idol_issue", "likes": 67112, "comments": 1820, "alt": "연예인병 논란 아이돌 스태프" },
+            { "id": 6, "src": "assets/images/explore-real/explore-real-06.jpg", "size": "square", "mediaType": "photo", "author": "daiso_pick", "likes": 12344, "comments": 267, "alt": "직장인 추천템" },
+            { "id": 7, "src": "assets/images/explore-real/explore-real-07.jpg", "size": "square", "mediaType": "reel", "author": "campus_clip", "likes": 27100, "comments": 503, "alt": "너의 학점은" },
+            { "id": 8, "src": "assets/images/explore-real/explore-real-08.jpg", "size": "square", "mediaType": "reel", "author": "tech_short", "likes": 36112, "comments": 711, "alt": "이게 컴퓨터라고" },
+            { "id": 9, "src": "assets/images/explore-real/explore-real-09.jpg", "size": "square", "mediaType": "reel", "author": "keyboard_pick", "likes": 29403, "comments": 422, "alt": "저소음 키보드 취향" },
+            { "id": 10, "src": "assets/images/explore-real/explore-real-01.jpg", "size": "square", "mediaType": "reel", "author": "shorts_pick", "likes": 17645, "comments": 298, "alt": "이슈 쇼츠 클립" },
+            { "id": 11, "src": "assets/images/explore-real/explore-real-04.jpg", "size": "square", "mediaType": "photo", "author": "desk_setup", "likes": 8831, "comments": 96, "alt": "데스크 셋업 사진" },
+            { "id": 12, "src": "assets/images/explore-real/explore-real-06.jpg", "size": "square", "mediaType": "photo", "author": "daily_pick", "likes": 7450, "comments": 82, "alt": "데일리 추천템 사진" }
+        ]
+    </script>
+
+    <div class="explore-modal" id="exploreModal" aria-hidden="true">
+        <div class="explore-modal__backdrop" data-close-modal></div>
+        <section class="explore-modal__dialog" role="dialog" aria-modal="true" aria-label="게시물 상세">
+            <button class="explore-modal__close" type="button" aria-label="닫기" data-close-modal>×</button>
+            <div class="explore-modal__media" id="exploreModalMedia"></div>
+            <aside class="explore-modal__panel">
+                <header class="explore-modal__header">
+                    <img src="assets/images/avatar.png" alt="profile" />
+                    <strong id="exploreModalAuthor">instagram_user</strong>
+                </header>
+                <div class="explore-modal__comments" id="exploreModalComments"></div>
+                <footer class="explore-modal__footer">
+                    <div class="explore-modal__stats">
+                        <span id="exploreModalLikes">좋아요 0개</span>
+                        <span id="exploreModalCount">댓글 0개</span>
+                    </div>
+                    <label class="explore-modal__input-wrap">
+                        <input class="explore-modal__input" type="text" placeholder="댓글 달기..." />
+                    </label>
+                </footer>
+            </aside>
+        </section>
     </div>
 </body>
 
