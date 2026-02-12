@@ -139,6 +139,9 @@ instagram-mockup-team5/
 
 ---
 
+## 🔗 Project Links
+https://jay000005.github.io/instagram-mockup-team5/
+
 
 
 
