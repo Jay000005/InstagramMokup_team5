@@ -1,0 +1,109 @@
+.sidebar {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  padding: 24px 12px;
+  border-right: 1px solid var(--border);
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.2s ease, box-shadow 0.2s ease;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  width: 244px;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+  z-index: 200;
+}
+
+.sidebar__logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  margin-bottom: 32px;
+  padding-left: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sidebar:hover .sidebar__logo {
+  justify-content: flex-start;
+  padding-left: 12px;
+}
+
+.sidebar__logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar:hover .sidebar__logo a {
+  justify-content: flex-start;
+}
+
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.sidebar__item span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.15s ease, width 0.15s ease;
+}
+
+.sidebar:hover .sidebar__item span {
+  opacity: 1;
+  width: auto;
+}
+
+.sidebar__item img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.sidebar__item:hover {
+  background-color: var(--hover);
+}
+
+.sidebar__item--profile img {
+  border-radius: 50%;
+}
+
+.sidebar__more {
+  margin-top: auto;
+}
+
+/*  모바일/태블릿에서는 숨김 */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/*  PC에서만 고정 사이드바 */
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex; /* 혹시 다른 곳에서 숨겼으면 다시 보이게 */
+  }
+}

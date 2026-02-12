@@ -1,20 +1,22 @@
-const toggleThemeBtn = document.querySelector('.header__theme-button');
+document.addEventListener('DOMContentLoaded', () => {
+  /* =========================
+     sidebar / bottom-nav 공통 삽입
+  ========================= */
+  const sidebarEl = document.getElementById('sidebar');
+  if (sidebarEl) {
+    fetch('components/sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        sidebarEl.innerHTML = html;
+      });
+  }
 
-document.onload = setInitialTheme(localStorage.getItem('theme'));
-function setInitialTheme(themeKey) {
-    if (themeKey === 'dark') {
-        document.documentElement.classList.add('darkTheme');
-    } else {
-        document.documentElement.classList.remove('darkTheme');
-    }
-}
-
-toggleThemeBtn.addEventListener('click', () => {
-    document.documentElement.classList.toggle('darkTheme');
-
-    if (document.documentElement.classList.contains('darkTheme')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-})
+  const bottomNavEl = document.getElementById('bottom-nav');
+  if (bottomNavEl) {
+    fetch('components/bottom-nav.html')
+      .then(res => res.text())
+      .then(html => {
+        bottomNavEl.innerHTML = html;
+      });
+  }
+});

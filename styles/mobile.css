@@ -1,0 +1,40 @@
+/* 기본: PC에서는 하단탭 숨김 */
+#bottom-nav { display: none; }
+
+/* 모바일 하단 탭바 */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+
+.bottom-nav__item img {
+  width: 24px;
+  height: 24px;
+}
+
+/* 모바일에서만 표시 */
+@media (max-width: 768px) {
+  #bottom-nav {
+    display: block;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid var(--border);
+    z-index: 9999;
+  }
+
+  /* 하단바에 본문이 가리지 않게 */
+  body {
+    padding-bottom: 60px;
+  }
+}
