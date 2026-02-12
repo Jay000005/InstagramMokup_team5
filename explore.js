@@ -5,6 +5,7 @@ const modalComments = document.getElementById("exploreModalComments");
 const modalLikes = document.getElementById("exploreModalLikes");
 const modalCount = document.getElementById("exploreModalCount");
 const modalAuthor = document.getElementById("exploreModalAuthor");
+const inlineExploreData = document.getElementById("exploreData");
 let activeItem = null;
 
 function sizeClass(size) {
@@ -15,6 +16,7 @@ function sizeClass(size) {
 
 function mediaClass(mediaType) {
     if (mediaType === "reel") return "explore__item--reel";
+    if (mediaType === "photo") return "explore__item--photo";
     if (mediaType === "carousel") return "explore__item--carousel";
     return "";
 }
@@ -121,10 +123,19 @@ function bindModalEvents() {
 async function loadExplore() {
     if (!grid) return;
 
-    const res = await fetch("data/explore.json");
-    if (!res.ok) throw new Error("Failed to load explore.json");
+    let items = [];
+    try {
+        const res = await fetch("data/explore.json");
+        if (!res.ok) throw new Error("Failed to load explore.json");
+        items = await res.json();
+    } catch (error) {
+        if (inlineExploreData?.textContent) {
+            items = JSON.parse(inlineExploreData.textContent);
+        } else {
+            throw error;
+        }
+    }
 
-    const items = await res.json();
     grid.innerHTML = "";
 
     items.forEach((item) => {

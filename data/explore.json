@@ -21,13 +21,13 @@
   },
   {
     "id": 3,
-    "src": "assets/images/explore-real/explore-real-03.jpg",
-    "size": "tall",
+    "src": "assets/images/explore-real/explore-real-10.jpg",
+    "size": "square",
     "mediaType": "reel",
-    "author": "dailycouple",
-    "likes": 21345,
-    "comments": 341,
-    "alt": "남편 둘 수빙이 짧믄 이유"
+    "author": "meme_school",
+    "likes": 19877,
+    "comments": 286,
+    "alt": "아빠의 모교 입학했는데 밈 영상"
   },
   {
     "id": 4,
@@ -88,5 +88,35 @@
     "likes": 29403,
     "comments": 422,
     "alt": "저소음 키보드 취향"
+  },
+  {
+    "id": 10,
+    "src": "assets/images/explore-real/explore-real-01.jpg",
+    "size": "square",
+    "mediaType": "reel",
+    "author": "shorts_pick",
+    "likes": 17645,
+    "comments": 298,
+    "alt": "이슈 쇼츠 클립"
+  },
+  {
+    "id": 11,
+    "src": "assets/images/explore-real/explore-real-04.jpg",
+    "size": "square",
+    "mediaType": "photo",
+    "author": "desk_setup",
+    "likes": 8831,
+    "comments": 96,
+    "alt": "데스크 셋업 사진"
+  },
+  {
+    "id": 12,
+    "src": "assets/images/explore-real/explore-real-06.jpg",
+    "size": "square",
+    "mediaType": "photo",
+    "author": "daily_pick",
+    "likes": 7450,
+    "comments": 82,
+    "alt": "데일리 추천템 사진"
   }
 ]
