@@ -29,38 +29,29 @@
 
 ---
 
-## 🌿 브랜치 전략
+## 🌿 협업 방식
 
-```
-main                      # 최종 배포 브랜치
-├─ feature/feed          # 피드 페이지 작업
-├─ feature/explore       # 탐색 페이지 작업
-├─ feature/reels         # 릴스 페이지 작업
-└─ feature/profile       # 프로필 페이지 작업
-```
-
-### 워크플로우
-1. `feature/기능명` 브랜치 생성
-2. 개발 및 커밋
-3. Pull Request 생성
-4. 코드 리뷰 및 승인
-5. `main` 브랜치에 병합
+- Feature 브랜치 전략 사용 (feature/feed, feature/explore, feature/reels, feature/profile)
+- Pull Request를 통한 코드 리뷰
+- `main` 브랜치로 병합
 
 ---
 
 ## 💻 구현 화면
 
 ### 피드 페이지 (메인)
+<img width="1920" height="913" alt="feed화면-web" src="https://github.com/user-attachments/assets/7b660cea-7661-4915-a91c-3258065f0ba5" />
 
 
 ### 탐색 페이지
-
+<img width="1920" height="910" alt="탐색화면-web" src="https://github.com/user-attachments/assets/119a34ce-6bcf-41c4-a78f-7aa292ab727e" />
 
 ### 릴스 페이지
+<img width="1920" height="915" alt="릴스화면-web" src="https://github.com/user-attachments/assets/63b4b663-d591-49b2-9d8b-ae5b0064f80b" />
 
 
 ### 프로필 페이지
-
+<img width="1920" height="915" alt="프로필화면-web" src="https://github.com/user-attachments/assets/d8574d07-8b36-4651-b26d-08dc300a5e5f" />
 
 ---
 
@@ -121,7 +112,7 @@ instagram-mockup-team5/
 
 ### HTML 구조 및 접근성
 - 시맨틱 태그를 활용한 구조적 마크업
-- 모든 이미지에 `alt` 속성 추가
+- 이미지에 `alt` 속성 추가
 - 버튼에 `aria-label` 사용
 - 키보드 네비게이션 지원
 
@@ -132,11 +123,8 @@ instagram-mockup-team5/
 
 ### 반응형 브레이크포인트
 
-| 요소 | 모바일 (0~767px) | 데스크톱 (1024px+) |
-|------|------------------|---------------------|
-| 사이드바 | 숨김 | 표시 |
-| 하단바 | 표시 | 숨김 |
-| 추천 영역 | 숨김 | 표시 |
+- **모바일**: 768px 이하 → 사이드바 숨김, 하단바 표시
+- **데스크톱**: 769px 이상 → 사이드바 표시(80px, 호버 시 244px), 하단바 숨김
 
 ### JavaScript 기능
 - 컴포넌트 동적 로드 (Fetch API)
