@@ -44,7 +44,8 @@
 
 
 ### 탐색 페이지
-<img width="1920" height="910" alt="탐색화면-web" src="https://github.com/user-attachments/assets/119a34ce-6bcf-41c4-a78f-7aa292ab727e" />
+<img width="1920" height="863" alt="explore화면new" src="https://github.com/user-attachments/assets/b62480c5-fead-435b-9221-d53b8679f645" />
+
 
 ### 릴스 페이지
 <img width="1920" height="915" alt="릴스화면-web" src="https://github.com/user-attachments/assets/63b4b663-d591-49b2-9d8b-ae5b0064f80b" />
@@ -110,18 +111,26 @@ instagram-mockup-team5/
 
 ## 🔧 구현 세부사항
 
-### HTML 구조 및 접근성
-- 시맨틱 태그를 활용한 구조적 마크업
-- 이미지에 `alt` 속성 추가
-- 버튼에 `aria-label` 사용
-- 키보드 네비게이션 지원
+### HTML 구조 분석 및 설계
+
+- **UI 구조 분석**: 공통 레이아웃(사이드바 + 메인 콘텐츠) 설계
+- **페이지별 레이아웃**
+  
+   - 피드: 3단 레이아웃 (사이드바 + 메인 + 추천)
+   - 탐색: 사이드바 + 그리드 레이아웃
+   - 릴스: 사이드바 + 세로형 비디오 카드
+   - 프로필: 사이드바 + 프로필 정보 + 게시물 그리드
+
+### 시맨틱 태그 기반 마크업 구현
+- **웹 표준 준수**: `<header>`, `<main>`, `<section>`, `<article>`, `<nav>` 등 의미 있는 태그 사용
+- **접근성(Accessibility)**: 이미지 `alt` 속성 및 버튼 `aria-label` 적용으로 스크린 리더 최적화
 
 ### CSS 스타일링
 - **레이아웃**: Flexbox (사이드바, 버튼, 스토리), CSS Grid (탐색/프로필 그리드)
 - **스타일**: Instagram 폰트 스택, `border-radius`, `box-shadow`, hover 효과
-- **반응형**: 모바일 우선 접근, 미디어 쿼리 활용
+- **반응형**: 미디어 쿼리를 활용한 반응형 디자인
 
-### 반응형 브레이크포인트
+### 반응형 미디어 쿼리 적용
 
 - **모바일**: 768px 이하 → 사이드바 숨김, 하단바 표시
 - **데스크톱**: 769px 이상 → 사이드바 표시(80px, 호버 시 244px), 하단바 숨김
@@ -131,11 +140,6 @@ instagram-mockup-team5/
 - 스토리 스크롤 (좌우 버튼)
 - JSON 데이터 기반 렌더링
 - 이벤트 처리 (클릭, 스크롤, 호버)
-
-### 리소스 최적화
-- SVG 아이콘 사용 (확대 시 선명도 유지)
-- `currentColor`로 아이콘 색상 제어
-- 적절한 이미지 해상도 사용
 
 ---
 
