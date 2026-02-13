@@ -5,10 +5,9 @@ async function loadReels() {
     const reelsData = await response.json();
     
     const container = document.querySelector('.reels-container');
-    container.innerHTML = ''; // 기존 HTML 비우기
+    container.innerHTML = ''; 
 
     reelsData.forEach(data => {
-      // 1. HTML 구조를 백틱( ` ) 안에 통째로 넣습니다.
       const reelHTML = `
         <article class="reel-wrapper">
             <div class="reel-video-card">
@@ -48,11 +47,8 @@ async function loadReels() {
             </div>
         </article>
       `;
-      // 2. 컨테이너에 하나씩 추가
       container.insertAdjacentHTML('beforeend', reelHTML);
     });
-
-    // 3. 영상 재생 관련 로직 (선택사항: 첫 번째 영상 자동 재생)
     const firstVideo = container.querySelector('video');
     if (firstVideo) firstVideo.play();
 
@@ -71,21 +67,21 @@ function initScrollControl() {
   // 다음 버튼 클릭 시
   btnNext.addEventListener('click', () => {
     container.scrollBy({
-      top: window.innerHeight, // 화면 높이만큼 아래로
-      behavior: 'smooth'      // 부드럽게 이동
+      top: window.innerHeight, 
+      behavior: 'smooth'      
     });
   });
 
   // 이전 버튼 클릭 시
   btnPrev.addEventListener('click', () => {
     container.scrollBy({
-      top: -window.innerHeight, // 화면 높이만큼 위로
+      top: -window.innerHeight, 
       behavior: 'smooth'
     });
   });
 }
 
-// 3. 실제 실행: 모든 준비가 끝나면 순서대로 실행
+// 실제 실행: 모든 준비가 끝나면 순서대로 실행
 document.addEventListener('DOMContentLoaded', async () => {
     await loadReels();      
     initScrollControl();    

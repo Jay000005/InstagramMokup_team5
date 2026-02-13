@@ -80,9 +80,9 @@ instagram-mockup-team5/
 │  └─ bottom-nav.html       # 하단 네비게이션 (모바일)
 │
 ├─ js/                       # JavaScript 파일
-│  ├─ feed.js               # 피드 페이지 (스토리 스크롤, 더보기)
+│  ├─ feed.js               # 피드 페이지 (스토리 스크롤)
 │  ├─ explore.js            # 탐색 페이지 (그리드 렌더링)
-│  └─ reels.js              # 릴스 페이지 (비디오 제어)
+│  └─ reels.js              # 릴스 페이지 (렌더링 및 스크롤)
 │
 ├─ styles/                   # CSS 스타일시트
 │  ├─ reset.css             # 브라우저 기본 스타일 초기화
